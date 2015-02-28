@@ -46,6 +46,12 @@ object SparklingWaterDroplet {
     // Load data and parse it via h2o parser
     val irisTable = new DataFrame(new File(SparkFiles.get("iris.csv")))
 
+    // In SparklingWater, how to get SubFrame from DataFrame?
+    // In my IDE I see that irisTable can call subframe()
+    // Can I use subframe() to copy rows out of irisTable into irisTableSmall?
+    // For example, how to do this:
+    // val irisTableSmall = irisTable.subframe("what goes here to get rows 0 through 10?")
+
     // Build GBM model
     val gbmParams = new GBMParameters()
     gbmParams._train = irisTable
